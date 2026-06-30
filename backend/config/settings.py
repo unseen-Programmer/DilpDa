@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "apps.orders",
     "apps.payments",
     "apps.delivery",
+    "apps.reviews",
     "apps.adminpanel",
 ]
 
