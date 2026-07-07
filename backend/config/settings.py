@@ -1,5 +1,6 @@
 from datetime import timedelta
 from pathlib import Path
+import dj_database_url
 
 from decouple import Csv, config
 
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",   # <-- add this
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -81,20 +83,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("DB_NAME", default="dilpda_db", fallback="POSTGRES_DB"),
-        "USER": env("DB_USER", default="postgres", fallback="POSTGRES_USER"),
-        "PASSWORD": env(
-            "DB_PASSWORD",
-            default="postgres",
-            fallback="POSTGRES_PASSWORD",
+    "default": dj_database_url.config(
+        default=config(
+            "DATABASE_URL",
+            default="postgresql://postgres:postgres@localhost:5432/dilpda",
         ),
-        "HOST": env("DB_HOST", default="localhost", fallback="POSTGRES_HOST"),
-        "PORT": env("DB_PORT", default="5432", fallback="POSTGRES_PORT"),
-    }
+        conn_max_age=600,
+        ssl_require=not DEBUG,
+    )
 }
 
 
@@ -120,7 +117,13 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
