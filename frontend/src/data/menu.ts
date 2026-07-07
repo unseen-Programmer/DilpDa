@@ -1,0 +1,145 @@
+export type FoodType = "veg" | "non-veg";
+
+export type FoodItem = {
+  categoryId: string;
+  description: string;
+  id: string;
+  image: string;
+  ingredients: string[];
+  isPopular: boolean;
+  name: string;
+  prepTime: number;
+  price: number;
+  rating: number;
+  reviews: number;
+  type: FoodType;
+};
+
+export const menuItems: FoodItem[] = [
+  {
+    id: "saffron-paneer-bowl",
+    name: "Saffron Paneer Bowl",
+    categoryId: "lunch",
+    description: "Charred paneer over cumin rice with roasted peppers, pickled onions, and saffron cream.",
+    ingredients: ["Paneer", "Cumin rice", "Saffron cream", "Bell peppers", "Pickled onion"],
+    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1200&q=80",
+    isPopular: true,
+    prepTime: 18,
+    price: 249,
+    rating: 4.8,
+    reviews: 342,
+    type: "veg",
+  },
+  {
+    id: "smoked-chicken-burger",
+    name: "Smoked Chicken Burger",
+    categoryId: "fast-food",
+    description: "Juicy smoked chicken patty, caramelized onions, pepper jack, and house whiskey glaze.",
+    ingredients: ["Chicken", "Brioche", "Pepper jack", "Caramelized onion", "House glaze"],
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
+    isPopular: true,
+    prepTime: 16,
+    price: 299,
+    rating: 4.9,
+    reviews: 418,
+    type: "non-veg",
+  },
+  {
+    id: "golden-masala-dosa",
+    name: "Golden Masala Dosa",
+    categoryId: "breakfast",
+    description: "Paper-crisp dosa with spiced potato, coconut chutney, and slow-simmered sambar.",
+    ingredients: ["Rice batter", "Potato masala", "Coconut chutney", "Sambar", "Ghee"],
+    image: "https://images.unsplash.com/photo-1694849789325-914b71ab4075?auto=format&fit=crop&w=1200&q=80",
+    isPopular: true,
+    prepTime: 14,
+    price: 159,
+    rating: 4.7,
+    reviews: 286,
+    type: "veg",
+  },
+  {
+    id: "tandoori-chicken-platter",
+    name: "Tandoori Chicken Platter",
+    categoryId: "dinner",
+    description: "Clay-oven chicken with mint yogurt, laccha onion, warm naan, and smoked butter.",
+    ingredients: ["Chicken", "Tandoori spice", "Mint yogurt", "Naan", "Smoked butter"],
+    image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1200&q=80",
+    isPopular: true,
+    prepTime: 24,
+    price: 379,
+    rating: 4.9,
+    reviews: 527,
+    type: "non-veg",
+  },
+  {
+    id: "iced-caramel-cold-brew",
+    name: "Iced Caramel Cold Brew",
+    categoryId: "beverages",
+    description: "Slow-steeped coffee, caramel foam, and a crisp amber finish over ice.",
+    ingredients: ["Cold brew", "Caramel", "Milk foam", "Ice"],
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1200&q=80",
+    isPopular: true,
+    prepTime: 8,
+    price: 149,
+    rating: 4.6,
+    reviews: 194,
+    type: "veg",
+  },
+  {
+    id: "loaded-campus-fries",
+    name: "Loaded Campus Fries",
+    categoryId: "snacks",
+    description: "Crisp fries under cheese sauce, masala dust, scallions, and chili crunch.",
+    ingredients: ["Potatoes", "Cheese sauce", "Masala dust", "Scallions", "Chili crunch"],
+    image: "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=1200&q=80",
+    isPopular: true,
+    prepTime: 12,
+    price: 189,
+    rating: 4.7,
+    reviews: 231,
+    type: "veg",
+  },
+  {
+    id: "midnight-biryani",
+    name: "Midnight Biryani",
+    categoryId: "dinner",
+    description: "Layered basmati rice, tender chicken, fried onions, saffron, and cooling raita.",
+    ingredients: ["Chicken", "Basmati rice", "Saffron", "Fried onion", "Raita"],
+    image: "https://images.unsplash.com/photo-1701579231305-d84d8af9a3fd?auto=format&fit=crop&w=1200&q=80",
+    isPopular: false,
+    prepTime: 28,
+    price: 339,
+    rating: 4.8,
+    reviews: 377,
+    type: "non-veg",
+  },
+  {
+    id: "dark-chocolate-mousse",
+    name: "Dark Chocolate Mousse",
+    categoryId: "desserts",
+    description: "Velvet chocolate mousse with cocoa crumble, sea salt, and vanilla cream.",
+    ingredients: ["Dark chocolate", "Cocoa crumble", "Vanilla cream", "Sea salt"],
+    image: "https://images.unsplash.com/photo-1511715112108-9acc6f049a43?auto=format&fit=crop&w=1200&q=80",
+    isPopular: false,
+    prepTime: 10,
+    price: 179,
+    rating: 4.8,
+    reviews: 163,
+    type: "veg",
+  },
+  {
+    id: "herbed-mushroom-wrap",
+    name: "Herbed Mushroom Wrap",
+    categoryId: "lunch",
+    description: "Grilled mushrooms, herbed yogurt, greens, and crisp onions folded in a soft wrap.",
+    ingredients: ["Mushrooms", "Herbed yogurt", "Greens", "Crisp onions", "Tortilla"],
+    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1200&q=80",
+    isPopular: false,
+    prepTime: 13,
+    price: 219,
+    rating: 4.5,
+    reviews: 141,
+    type: "veg",
+  },
+];

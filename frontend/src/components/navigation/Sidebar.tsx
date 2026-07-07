@@ -38,3 +38,4 @@ export function Sidebar({ items, title }: SidebarProps) {
     </aside>
   );
 }
+export default Sidebar;

@@ -78,6 +78,17 @@ a {
   min-height: 100vh;
 }
 
+.container-premium {
+  width: min(100%, 80rem);
+  margin-inline: auto;
+}
+
+.glass {
+  border: 1px solid var(--app-border);
+  background: color-mix(in srgb, var(--app-surface-strong) 78%, transparent);
+  backdrop-filter: blur(22px);
+}
+
 .dilpda-toast {
   border: 1px solid var(--app-border) !important;
   border-radius: 14px !important;
